@@ -1,0 +1,179 @@
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-m: hsl(217, 54%, 11%);
+    --very-dark-blue-c: hsl(216, 50%, 16%);
+    --very-dark-blue-l: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/*General*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: "Outfit", sans-serif;
+    background-color: var(--very-dark-blue-m);
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+p {
+    color: var(--soft-blue);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/*Card*/
+
+.card {
+    width: 350px;
+    background-color: var(--very-dark-blue-c);
+    padding: 1.5em;
+    border-radius: 0.75em;
+}
+
+.card-hero {
+    position: relative;
+    height: 302px;
+}
+
+.card-hero img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5em;
+}
+
+.card-hero::before {
+    content: "";
+    display: none;
+    position: absolute;
+    background: var(--cyan);
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75em;
+    opacity: 0.5;
+    cursor: pointer;
+    animation-name: opacity-transition;
+    animation-duration: 0.25s;
+}
+
+.card-hero::after {
+    content: "";
+    display: none;
+    position: absolute;
+    background-image: url("/images/icon-view.svg");
+    width: 3em;
+    height: 3em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+
+.card-title {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1em 0 0.6em;
+}
+
+.card-desc {
+    margin: 0.7em 0;
+}
+
+.card-status {
+    margin: 1.5em 0;
+}
+
+.icon {
+    margin-right: 0.4em;
+}
+
+.card-value-info p {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.avatar-info {
+    padding-top: 1em;
+    margin-bottom: 0.5em;
+    border-top: 1px solid var(--very-dark-blue-l);
+}
+
+.avatar-info img {
+    width: 2.5em;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    
+}
+
+.avatar-info p {
+    margin-left: 1em;
+}
+
+span {
+    color: var(--white);
+    cursor: pointer;
+}
+
+.reference {
+    position: absolute;
+    bottom: 1em;
+}
+
+.reference a {
+    color: var(--cyan);
+}
+
+/*Hover States*/
+
+.card-hero:hover::before,
+.card-hero:hover::after {
+    display: block;
+}
+
+.card-title:hover, span:hover {
+    color: var(--cyan);
+}
+
+/*Animation*/
+
+@keyframes opacity-transition {
+
+    0% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+
+
+    
